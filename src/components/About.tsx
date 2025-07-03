@@ -25,11 +25,11 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-20 relative" data-aos="fade-up">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Title */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-down">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Acerca de mí
             </h2>
@@ -38,7 +38,7 @@ export const About = () => {
 
           {/* Main Content */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div className="space-y-6">
+            <div className="space-y-6" data-aos="fade-right" data-aos-delay="100">
               <p className="text-lg text-gray-300 leading-relaxed">
                 Soy estudiante de <span className="text-blue-400 font-semibold">Ingeniería en Sistemas</span>, 
                 apasionado por la tecnología y el desarrollo de software. Me especializo en crear 
@@ -52,14 +52,14 @@ export const About = () => {
               </p>
             </div>
 
-            <div className="relative">
+            <div className="relative" data-aos="fade-left" data-aos-delay="200">
               <div className="w-full h-80 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl backdrop-blur-sm border border-slate-700/50 flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                     <Code className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Siempre aprendiendo</h3>
-                  <p className="text-gray-300">Manteniéndome actualizado con las últimas tecnologías</p>
+                  <h3 className="text-xl font-semibold text-white mb-2" data-aos="fade-up" data-aos-delay="300">Siempre aprendiendo</h3>
+                  <p className="text-gray-300" data-aos="fade-up" data-aos-delay="350">Manteniéndome actualizado con las últimas tecnologías</p>
                 </div>
               </div>
             </div>
@@ -71,6 +71,8 @@ export const About = () => {
               <div
                 key={index}
                 className="group p-6 bg-slate-800/30 backdrop-blur-sm rounded-xl border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105"
+                data-aos="zoom-in"
+                data-aos-delay={index * 120 + 400}
               >
                 <div className="text-blue-400 mb-4 group-hover:text-purple-400 transition-colors">
                   {skill.icon}
