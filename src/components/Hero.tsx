@@ -16,7 +16,11 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden" data-aos="fade">
+    <section
+      id="hero"
+      className="h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-28 pb-12"
+      data-aos="fade"
+    >
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.1),transparent)] animate-pulse"></div>
@@ -91,7 +95,7 @@ export const Hero = () => {
           {/* CTA Button */}
           <button
             onClick={scrollToNext}
-            className="group flex items-center justify-center mx-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200 transform hover:scale-110"
+            className="group flex items-center justify-center mx-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200 transform hover:scale-110 mb-20 sm:mb-24"
             data-aos="zoom-in"
             data-aos-delay="700"
           >
@@ -101,8 +105,8 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" data-aos="fade-up" data-aos-delay="800">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce z-0">
+        {/* Indicador de scroll */}
         <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
         </div>
