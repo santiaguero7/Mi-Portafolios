@@ -13,12 +13,12 @@ export default function App() {
   }, []);
 
   return (
-  <div className="w-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
-  <Navigation />
-  <Hero />
-  <About />
-  <Projects />
-  <Contact />
-</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+      <Navigation />
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+    </div>
   );
 }

@@ -43,12 +43,3 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden; /* ✅ esto bloquea scroll lateral */
-  overflow-y: auto;   /* ✅ esto mantiene scroll vertical */
-  background-color: #0f172a; /* opcional: igual a bg-slate-900 */
-}
