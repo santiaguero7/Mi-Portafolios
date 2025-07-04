@@ -43,3 +43,6 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+body {
+  @apply bg-slate-900 text-white overflow-x-hidden overflow-y-auto;
+}
