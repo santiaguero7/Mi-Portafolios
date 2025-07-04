@@ -37,7 +37,7 @@ export const Navigation = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-gray-900"
+      className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md border-b border-gray-900"
       style={{ backgroundColor: "rgba(15,23,42,0.85)" }}
     >
       <div className="container mx-auto px-6 py-2 md:py-4">
@@ -58,11 +58,12 @@ export const Navigation = () => {
               </span>
             ))}
           </div>
+
           {/* Mobile hamburger */}
           <div className="md:hidden">
             <button
               onClick={() => setOpen(!open)}
-              className="focus:outline-none ml-[-8px]" // mueve el botón más al borde
+              className="focus:outline-none ml-2"
               aria-label="Abrir menú"
               style={{ background: "none", border: "none", boxShadow: "none" }}
             >
