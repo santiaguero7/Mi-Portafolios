@@ -37,3 +37,9 @@ button {
   animation: modal-in 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 
+body {
+  background-color: rgb(15 23 42); /* o #0f172a */
+  color: white;
+  margin: 0;
+  overflow-x: hidden;
+}
