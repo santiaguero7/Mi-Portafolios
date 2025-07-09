@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;900&family=Roboto+Flex:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700;900&display=swap');
+
+@layer utilities {
+  .font-noto {
+    font-family: 'Noto Sans', 'Nunito', 'Inter', sans-serif !important;
+  }
+}
+
+@layer utilities {
+  .shine-text {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding-bottom: 0.28em;
+  }
+  .shine-text .shine-effect {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 50%, #38bdf8 80%, transparent 100%);
+    opacity: 0.6;
+    pointer-events: none;
+    animation: shine-move 1s ease-in-out 0s 1;
+    z-index: 1;
+    display: none;
+  }
+  .shine-text.shine-animate .shine-effect {
+    display: block !important;
+    animation: shine-move 1s ease-in-out 0s 1;
+  }
+  @keyframes shine-move {
+    0% {
+      left: -50%;
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.6;
+    }
+    85% {
+      opacity: 0.6;
+    }
+    100% {
+      left: 100%;
+      opacity: 0;
+    }
+  }
+}
+@layer utilities {
+  @keyframes highlight-letter-dark {
+    0%, 80%, 100% {
+      color: hsl(var(--foreground));
+      text-shadow: none;
+    }
+    45%, 55% {
+      color: #7ecbff;
+      text-shadow: 0 0 8px #7ecbff, 0 0 2px #7ecbff;
+    }
+  }
+}
+@layer utilities {
+  .highlight-animated {
+    animation: highlight-letter 1.2s linear;
+  }
+  @keyframes highlight-letter {
+    0%, 100% {
+      color: hsl(var(--foreground));
+      text-shadow: none;
+    }
+    20%, 80% {
+      color: #38bdf8;
+      text-shadow: 0 0 16px #38bdf8, 0 0 8px #38bdf8, 0 0 2px #7ecbff;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+@layer utilities {
+  .animate-gradient-x-fast {
+    animation: gradient-x-fast 2.2s linear infinite;
+    background-size: 300% 100%;
+  }
+  @keyframes gradient-x-fast {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .highlight-animated {
+    animation: highlight-letter 1.2s linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+  @keyframes highlight-letter-pause {
+    0%, 100% {
+      color: hsl(var(--foreground));
+      text-shadow: none;
+    }
+  }
+}
+@layer utilities {
+  .animate-gradient-flash {
+    animation: gradient-flash 1.2s linear infinite;
+    background-size: 200% 100%;
+  }
+  @keyframes gradient-flash {
+    0% {
+      background-position: 200% 0;
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    30% {
+      opacity: 0.7;
+    }
+    50% {
+      background-position: 0 0;
+      opacity: 0;
+    }
+    100% {
+      background-position: 0 0;
+      opacity: 0;
+    }
+  }
+}
+@layer utilities {
+  .animate-gradient-wave {
+    animation: gradient-wave 4s ease-in-out infinite;
+  }
+  @keyframes gradient-wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+@layer utilities {
+  .animate-gradient-x {
+    animation: gradient-x 3s linear infinite;
+  }
+  @keyframes gradient-x {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 84% 5%;
+  --foreground: 210 40% 98%;
+  --card: 222 84% 7%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 84% 7%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217 92% 59%;
+  --primary-foreground: 222 84% 5%;
+  --secondary: 217 32% 18%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 32% 15%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 142 76% 36%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217 32% 18%;
+  --input: 217 32% 18%;
+  --ring: 217 92% 59%;
+  --radius: 0.75rem;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    box-sizing: border-box;
+  }
+
+  /* Configuración principal para prevenir doble scroll */
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-padding-top: 80px; /* Para navegación sticky */
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: Inter, system-ui, sans-serif;
+    background: 
+      radial-gradient(ellipse at top, hsl(222 84% 8%) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, hsl(235 84% 6%) 0%, transparent 50%),
+      linear-gradient(135deg, hsl(222 84% 5%) 0%, hsl(235 84% 7%) 50%, hsl(222 84% 5%) 100%);
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  #root {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Asegurar que ningún contenedor cree scroll adicional */
+  section {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Prevenir scroll horizontal en cualquier elemento */
+  * {
+    max-width: 100%;
+  }
+
+  /* Asegurar que los elementos grid no causen overflow */
+  .grid {
+    overflow-x: hidden;
+  }
+
+  /* Forzar el comportamiento correcto en móvil */
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+    }
+    
+    * {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    
+    section {
+      overflow-x: hidden;
+    }
+    
+    .grid {
+      overflow-x: hidden;
+    }
+    
+    /* Específico para prevenir scroll horizontal en Skills */
+    #skills .grid {
+      overflow-x: hidden;
+    }
+    
+    #skills .container {
+      overflow-x: hidden;
+    }
+  }
+
+  /* Configuración específica para iOS Safari */
+  @supports (-webkit-touch-callout: none) {
+    html, body {
+      overflow-x: hidden;
+      position: relative;
+    }
+  }
+
+  /* Prevenir scroll horizontal temporal en todas las secciones */
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  #root {
+    overflow-x: hidden;
+  }
+  
+  .section-padding {
+    overflow-x: hidden;
+  }
+  
+  /* Prevenir overflow en contenedores principales solo en X */
+  .container {
+    overflow-x: hidden;
+  }
+  
+  /* Prevenir overflow en grids solo en X */
+  .grid {
+    overflow-x: hidden;
+  }
+  
+  /* Prevenir overflow en cualquier elemento */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Prevenir que el hover se corte en About */
+  #about .grid {
+    overflow: visible !important;
+  }
+
+  #about .glass {
+    overflow: visible !important;
+  }
+
+  /* Agregar padding extra para el hover effect */
+  #about .grid.grid-cols-2 {
+    padding: 8px;
+    gap: 1.5rem;
+  }
+
+  /* Prevenir scroll interno en Projects solamente */
+  #projects .grid {
+    overflow: hidden !important;
+  }
+
+  /* Asegurar que el hover en Projects no cause scroll interno */
+  #projects .group:hover {
+    overflow: hidden;
+  }
+
+  /* Efecto más leve y agrandamiento menor para iconos en Skills (Frontend, Backend, Herramientas, Diseño & UX) */
+  #skills .group\/item:hover img {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 1.5px #38bdf8) drop-shadow(0 0 0.2px #38bdf8);
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* Hover unificado y más leve para TODOS los contenedores de Skills */
+  #skills .group:hover {
+    box-shadow: 0 2px 12px 0 rgba(56,189,248,0.10), 0 1px 4px 0 rgba(56,189,248,0.07);
+    transition: box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* Permitir que el efecto de hover de iconos en Skills nunca se corte (incluso en el borde inferior) */
+  #skills .grid {
+    overflow: visible !important;
+  }
+
+  #skills .group {
+    overflow: visible !important;
+  }
+
+  /* Asegurar que el padding-bottom del grid de Skills permita que el hover de los iconos de la última fila no se corte */
+  #skills .grid {
+    padding-bottom: 24px;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    backdrop-filter: blur(16px);
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#3b82f6] via-[#2563eb] to-[#1e90ff] bg-clip-text text-transparent font-extrabold;
+  }
+  
+  .gradient-text-pro {
+    background: linear-gradient(90deg, #7ecbff 0%, #3b82f6 60%, #1e90ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: drop-shadow(0 2px 24px #2563eb88);
+    letter-spacing: 0.5px;
+  }
+  
+  .animate-float-particle {
+    animation: floatParticle 7s ease-in-out infinite alternate;
+  }
+  
+  @keyframes floatParticle {
+    0% { transform: translateY(0) scale(1); opacity: 0.7; }
+    50% { transform: translateY(-30px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 0.7; }
+  }
+
+  .section-padding {
+    @apply py-12 px-4 sm:py-16 sm:px-6 lg:py-20 lg:px-8;
+  }
+
+  .container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+@layer utilities {
+  @keyframes fadeInLogo {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  .animate-fade-in-logo {
+    animation: fadeInLogo 1.1s cubic-bezier(0.4,0,0.2,1) both;
+  }
+}
