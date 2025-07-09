@@ -94,10 +94,10 @@ const Skills = () => (
   <section id="skills" className="section-padding overflow-hidden">
     <div className="container overflow-hidden">
       <div className="text-center mb-8 sm:mb-12">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 font-noto">
+        <h2 data-aos="fade-up" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 font-noto">
           <span className="gradient-text">Habilidades</span> & Tecnologías
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-2xl mx-auto px-2 sm:px-4">
+        <p data-aos="fade-up" data-aos-delay="100" className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-2xl mx-auto px-2 sm:px-4">
           Las tecnologías y herramientas que uso para crear soluciones.
         </p>
       </div>
@@ -105,7 +105,7 @@ const Skills = () => (
       {/* Primera fila - Frontend y Backend - Solo desktop */}
       <div className="hidden lg:grid grid-cols-1 lg:grid-cols-5 gap-8 overflow-hidden">
 
-        <div className={`
+        <div data-aos="fade-right" data-aos-delay="200" className={`
           relative rounded-2xl p-8 flex flex-col items-center 
           bg-gradient-to-br from-black/30 via-black/20 to-black/10 
           backdrop-blur-xl border border-white/10 
@@ -123,22 +123,22 @@ const Skills = () => (
             {skillsData[0].items.map((skill, skillIndex) => (
               <div 
                 key={skillIndex} 
-                className="flex flex-col items-center group/item hover:scale-105 transition-transform duration-300"
+                className="flex flex-col items-center group/item transition-all duration-200 ease-out"
               >
-                <div className="relative mb-3">
-                  <div className="absolute inset-0 bg-gradient-to-r from-sky-400/30 to-blue-400/30 rounded-full blur opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-sky-400/20 rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative mb-3 transform group-hover/item:scale-105 transition-transform duration-200 ease-out">
+                  <div className="absolute inset-0 bg-gradient-to-r from-sky-400/30 to-blue-400/30 rounded-full blur opacity-0 group-hover/item:opacity-100 transition-opacity duration-200"></div>
+                  <div className="absolute inset-0 bg-sky-400/20 rounded-full opacity-0 group-hover/item:opacity-100 transition-opacity duration-200"></div>
                   <img 
                     src={skill.icon} 
                     alt={skill.name} 
-                    className="w-12 h-12 object-contain relative z-10 drop-shadow-lg group-hover/item:drop-shadow-xl transition-all duration-300"
+                    className="w-12 h-12 object-contain relative z-10 drop-shadow-lg group-hover/item:drop-shadow-xl transition-all duration-200 ease-out"
                     onError={(e) => {
                       console.log(`Error loading icon for ${skill.name}:`, e.target.src);
                       e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21'/%3E%3C/svg%3E";
                     }}
                   />
                 </div>
-                <span className="text-sm text-foreground/80 text-center font-medium group-hover/item:text-foreground transition-colors duration-300">
+                <span className="text-sm text-foreground/80 text-center font-medium group-hover/item:text-foreground transition-colors duration-200">
                   {skill.name}
                 </span>
               </div>
@@ -147,7 +147,7 @@ const Skills = () => (
         </div>
 
         {/* Backend - 2 columnas */}
-        <div className={`
+        <div data-aos="fade-left" data-aos-delay="300" className={`
           relative rounded-2xl p-8 flex flex-col items-center 
           bg-gradient-to-br from-black/30 via-black/20 to-black/10 
           backdrop-blur-xl border border-white/10 
@@ -165,20 +165,20 @@ const Skills = () => (
             {skillsData[1].items.map((skill, skillIndex) => (
               <div 
                 key={skillIndex} 
-                className="flex flex-col items-center group/item hover:scale-105 transition-transform duration-300"
+                className="flex flex-col items-center group/item transition-all duration-200 ease-out"
               >
-                <div className="relative mb-3">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur opacity-0 group-hover:item:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative mb-3 transform group-hover/item:scale-105 transition-transform duration-200 ease-out">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur opacity-0 group-hover/item:opacity-100 transition-opacity duration-200"></div>
                   <img 
                     src={skill.icon} 
                     alt={skill.name} 
-                    className="w-12 h-12 object-contain relative z-10 drop-shadow-lg group-hover:item:drop-shadow-xl transition-all duration-300"
+                    className="w-12 h-12 object-contain relative z-10 drop-shadow-lg group-hover/item:drop-shadow-xl transition-all duration-200 ease-out"
                     onError={(e) => {
                       e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21'/%3E%3C/svg%3E";
                     }}
                   />
                 </div>
-                <span className="text-sm text-foreground/80 text-center font-medium group-hover:item:text-foreground transition-colors duration-300">
+                <span className="text-sm text-foreground/80 text-center font-medium group-hover/item:text-foreground transition-colors duration-200">
                   {skill.name}
                 </span>
               </div>
@@ -190,7 +190,7 @@ const Skills = () => (
       {/* Segunda fila - Herramientas y Design & UX - Solo desktop */}
       <div className="hidden lg:grid grid-cols-5 gap-8 mt-8 w-full overflow-hidden">
         {/* Herramientas */}
-        <div className={`
+        <div data-aos="fade-right" data-aos-delay="400" className={`
           relative rounded-2xl p-8 flex flex-col items-center
           bg-gradient-to-br from-black/30 via-black/20 to-black/10
           backdrop-blur-xl border border-white/10
@@ -208,20 +208,20 @@ const Skills = () => (
             {skillsData[2].items.map((skill, skillIndex) => (
               <div 
                 key={skillIndex} 
-                className="flex flex-col items-center group/item hover:scale-105 transition-transform duration-300"
+                className="flex flex-col items-center group/item transition-all duration-200 ease-out"
               >
-                <div className="relative mb-3">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur opacity-0 group-hover:item:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative mb-3 transform group-hover/item:scale-105 transition-transform duration-200 ease-out">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur opacity-0 group-hover/item:opacity-100 transition-opacity duration-200"></div>
                   <img 
                     src={skill.icon} 
                     alt={skill.name} 
-                    className="w-12 h-12 object-contain relative z-10 drop-shadow-lg group-hover:item:drop-shadow-xl transition-all duration-300"
+                    className="w-12 h-12 object-contain relative z-10 drop-shadow-lg group-hover/item:drop-shadow-xl transition-all duration-200 ease-out"
                     onError={(e) => {
                       e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21'/%3E%3C/svg%3E";
                     }}
                   />
                 </div>
-                <span className="text-sm text-foreground/80 text-center font-medium group-hover:item:text-foreground transition-colors duration-300">
+                <span className="text-sm text-foreground/80 text-center font-medium group-hover/item:text-foreground transition-colors duration-200">
                   {skill.name}
                 </span>
               </div>
@@ -230,7 +230,7 @@ const Skills = () => (
         </div>
 
         {/* Design & UX */}
-        <div className={`
+        <div data-aos="fade-left" data-aos-delay="500" className={`
           relative rounded-2xl p-8 flex flex-col items-center
           bg-gradient-to-br from-black/30 via-black/20 to-black/10
           backdrop-blur-xl border border-white/10
@@ -273,7 +273,7 @@ const Skills = () => (
       {/* Frontend y Backend en mobile */}
       <div className="grid grid-cols-1 gap-8 mt-8 lg:hidden overflow-hidden">
         {/* Frontend */}
-        <div className={`
+        <div data-aos="fade-up" data-aos-delay="200" className={`
           relative overflow-hidden rounded-2xl p-8 flex flex-col items-center
           bg-gradient-to-br from-black/30 via-black/20 to-black/10
           backdrop-blur-xl border border-white/10
@@ -312,7 +312,7 @@ const Skills = () => (
           </div>
         </div>
         {/* Backend */}
-        <div className={`
+        <div data-aos="fade-up" data-aos-delay="300" className={`
           relative rounded-2xl p-8 flex flex-col items-center
           bg-gradient-to-br from-black/30 via-black/20 to-black/10
           backdrop-blur-xl border border-white/10
@@ -355,7 +355,7 @@ const Skills = () => (
       {/* Segunda fila - Herramientas y Design & UX en mobile */}
       <div className="grid grid-cols-1 gap-8 mt-8 lg:hidden overflow-hidden">
         {/* Herramientas */}
-        <div className={`
+        <div data-aos="fade-up" data-aos-delay="400" className={`
           relative rounded-2xl p-8 flex flex-col items-center
           bg-gradient-to-br from-black/30 via-black/20 to-black/10
           backdrop-blur-xl border border-white/10
@@ -394,7 +394,7 @@ const Skills = () => (
           </div>
         </div>
         {/* Design & UX */}
-        <div className={`
+        <div data-aos="fade-up" data-aos-delay="500" className={`
           relative rounded-2xl p-8 flex flex-col items-center
           bg-gradient-to-br from-black/30 via-black/20 to-black/10
           backdrop-blur-xl border border-white/10

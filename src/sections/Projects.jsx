@@ -6,42 +6,43 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Plataforma de comercio electrónico completa con carrito de compras, procesamiento de pagos y panel de administración.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-      liveUrl: "https://demo-ecommerce.com",
-      githubUrl: "https://github.com/santiago/ecommerce",
+      title: "PetPal",
+      description: "Aplicación móvil de gestión de mascotas y cuidadores/paseadores. Distintos tipos de cuenta y gestion de reservas.",
+      technologies: ["React Native", "Node.js", "MySQL", "Railway", "Tailwind CSS"],
+      image: "/PetPalLogo.png",
+      githubUrl: "https://github.com/santiaguero7/PetPal-App",
+      liveUrl: "#",
       featured: true
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "Aplicación de gestión de tareas con funcionalidades de colaboración en tiempo real y seguimiento de proyectos.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Vue.js", "Express", "PostgreSQL", "Socket.io"],
-      liveUrl: "https://taskmanager-demo.com",
-      githubUrl: "https://github.com/santiago/taskmanager",
+      title: "Plataforma de E-commerce",
+      description: "Plataforma de comercio de perfumes completa con carrito de compras, gestión de inventario y procesamiento de pagos.",
+      technologies: ["React", "Node.js", "MySql", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      githubUrl: "https://github.com",
+      liveUrl: "https://demo.com",
       featured: true
     },
+    // Otros proyectos pequeños
     {
       id: 3,
       title: "Weather Dashboard",
-      description: "Dashboard del clima con predicciones avanzadas, mapas interactivos y alertas personalizadas.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "TypeScript", "Chart.js", "OpenWeather API"],
-      liveUrl: "https://weather-dashboard-demo.com",
-      githubUrl: "https://github.com/santiago/weather-dashboard",
+      description: "Dashboard meteorológico interactivo con pronósticos detallados y visualización de datos.",
+      technologies: ["React", "Python", "FastAPI"],
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      githubUrl: "https://github.com",
+      liveUrl: "https://demo.com",
       featured: false
     },
     {
       id: 4,
-      title: "Portfolio Website",
-      description: "Sitio web de portafolio personal con diseño responsivo y animaciones avanzadas.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-      liveUrl: "https://santiago-portfolio.com",
-      githubUrl: "https://github.com/santiago/portfolio",
+      title: "Social Media Analytics",
+      description: "Herramienta de análisis de redes sociales con métricas avanzadas y visualización de datos.",
+      technologies: ["Vue.js", "Django", "D3.js"],
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      githubUrl: "https://github.com",
+      liveUrl: "https://demo.com",
       featured: false
     }
   ];
@@ -57,89 +58,72 @@ const Projects = () => {
             Mis <span className="gradient-text">Proyectos</span>
           </h2>
           <p data-aos="fade-up" data-aos-delay="100" className="text-base sm:text-lg text-foreground/70 max-w-3xl mx-auto px-4">
-            Una selección de mis proyectos más destacados, desde aplicaciones web hasta soluciones empresariales
+            Una selección de mis proyectos más destacados. Desde aplicaciones móviles hasta paginas web. 
           </p>
         </div>
 
         {/* Featured Projects */}
         <div className="mb-8 sm:mb-12">
-          <h3 data-aos="fade-up" data-aos-delay="200" className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-center">Proyectos Destacados</h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 overflow-hidden" style={{ overflow: 'hidden' }}>
+          <div className="grid md:grid-cols-2 gap-8">
             {featuredProjects.map((project, index) => (
-              <div 
+              <div
                 key={project.id}
                 data-aos="fade-up"
                 data-aos-delay={300 + (index * 100)}
-                className="glass rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-500 group"
+                className="group bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105"
               >
                 {/* Project Image */}
-                <div className="relative h-48 sm:h-56 bg-gradient-to-br from-primary/20 via-accent/20 to-purple-400/20 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex space-x-2">
-                      <a 
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-primary/20 backdrop-blur-sm rounded-lg hover:bg-primary/30 transition-colors"
-                        aria-label="Ver proyecto live"
-                      >
-                        <ExternalLink size={18} />
-                      </a>
-                      <a 
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-foreground/20 backdrop-blur-sm rounded-lg hover:bg-foreground/30 transition-colors"
-                        aria-label="Ver código en GitHub"
-                      >
-                        <Github size={18} />
-                      </a>
-                    </div>
-                  </div>
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
                 </div>
 
-                {/* Project Content */}
-                <div className="p-6 sm:p-8">
-                  <h4 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                {/* Project Info */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                     {project.title}
-                  </h4>
-                  <p className="text-foreground/70 mb-4 text-sm sm:text-base leading-relaxed">
+                  </h3>
+                  
+                  <p className="text-gray-300 mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, techIndex) => (
-                      <Badge 
+                      <span
                         key={techIndex}
-                        variant="secondary"
-                        className="text-xs glass border border-muted/20"
+                        className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30"
                       >
                         {tech}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button 
-                      size="sm"
-                      className="flex-1 bg-primary hover:bg-primary/90"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
+                  <div className="flex space-x-4">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-4 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-gray-300 hover:text-white rounded-lg transition-all duration-300 group/btn"
                     >
-                      <ExternalLink size={16} className="mr-2" />
-                      Ver Proyecto
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="flex-1 border-foreground/20 hover:bg-foreground/10"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                    >
-                      <Github size={16} className="mr-2" />
+                      <Github className="w-4 h-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
                       Código
-                    </Button>
+                    </a>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 group/btn"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
+                      Demo
+                    </a>
                   </div>
                 </div>
               </div>
@@ -148,6 +132,7 @@ const Projects = () => {
         </div>
 
         {/* Other Projects */}
+        {otherProjects.length > 0 && (
         <div>
           <h3 data-aos="fade-up" data-aos-delay="500" className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-center">Otros Proyectos</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 overflow-hidden" style={{ overflow: 'hidden' }}>
@@ -156,56 +141,65 @@ const Projects = () => {
                 key={project.id}
                 data-aos="zoom-in"
                 data-aos-delay={600 + (index * 100)}
-                className="glass rounded-xl p-6 hover:bg-white/5 transition-all duration-300"
+                className="group bg-slate-800/20 backdrop-blur rounded-xl border border-slate-700/30 overflow-hidden hover:border-blue-500/40 transition-all duration-300 hover:scale-102"
               >
-                <div className="flex justify-between items-start mb-4">
-                  <h4 className="text-lg sm:text-xl font-bold">{project.title}</h4>
-                  <div className="flex space-x-2">
-                    <a 
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-foreground/60 hover:text-primary transition-colors"
-                      aria-label="Ver proyecto live"
-                    >
-                      <ExternalLink size={18} />
-                    </a>
-                    <a 
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-foreground/60 hover:text-primary transition-colors"
-                      aria-label="Ver código en GitHub"
-                    >
-                      <Github size={18} />
-                    </a>
-                  </div>
+                {/* Project Image */}
+                <div className="relative h-32 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent"></div>
                 </div>
-                
-                <p className="text-foreground/70 mb-4 text-sm sm:text-base">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                    <Badge 
-                      key={techIndex}
-                      variant="secondary"
-                      className="text-xs glass border border-muted/20"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <Badge variant="secondary" className="text-xs glass border border-muted/20">
-                      +{project.technologies.length - 3}
-                    </Badge>
-                  )}
+                <div className="p-4">
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="text-base sm:text-lg font-bold text-white">{project.title}</h4>
+                    <div className="flex space-x-2">
+                      <a 
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground/60 hover:text-primary transition-colors"
+                        aria-label="Ver proyecto live"
+                      >
+                        <ExternalLink size={16} />
+                      </a>
+                      <a 
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground/60 hover:text-primary transition-colors"
+                        aria-label="Ver código en GitHub"
+                      >
+                        <Github size={16} />
+                      </a>
+                    </div>
+                  </div>
+                  <p className="text-foreground/70 mb-3 text-xs sm:text-sm">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-2 py-0.5 bg-blue-600/10 text-blue-300 text-xs rounded-full border border-blue-500/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 3 && (
+                      <span className="px-2 py-0.5 bg-blue-600/10 text-blue-300 text-xs rounded-full border border-blue-500/20">
+                        +{project.technologies.length - 3}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
+        )}
 
         {/* Call to Action */}
         <div className="text-center mt-12 sm:mt-16">

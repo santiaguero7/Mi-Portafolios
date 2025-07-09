@@ -199,8 +199,6 @@
   /* Configuración principal para prevenir doble scroll */
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    scroll-padding-top: 80px; /* Para navegación sticky */
   }
 
   body {
@@ -213,99 +211,9 @@
       linear-gradient(135deg, hsl(222 84% 5%) 0%, hsl(235 84% 7%) 50%, hsl(222 84% 5%) 100%);
     background-attachment: fixed;
     scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    min-height: 100vh;
   }
 
-  #root {
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  /* Asegurar que ningún contenedor cree scroll adicional */
-  section {
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  /* Prevenir scroll horizontal en cualquier elemento */
-  * {
-    max-width: 100%;
-  }
-
-  /* Asegurar que los elementos grid no causen overflow */
-  .grid {
-    overflow-x: hidden;
-  }
-
-  /* Forzar el comportamiento correcto en móvil */
-  @media (max-width: 768px) {
-    html, body {
-      overflow-x: hidden;
-    }
-    
-    * {
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-    
-    section {
-      overflow-x: hidden;
-    }
-    
-    .grid {
-      overflow-x: hidden;
-    }
-    
-    /* Específico para prevenir scroll horizontal en Skills */
-    #skills .grid {
-      overflow-x: hidden;
-    }
-    
-    #skills .container {
-      overflow-x: hidden;
-    }
-  }
-
-  /* Configuración específica para iOS Safari */
-  @supports (-webkit-touch-callout: none) {
-    html, body {
-      overflow-x: hidden;
-      position: relative;
-    }
-  }
-
-  /* Prevenir scroll horizontal temporal en todas las secciones */
-  html, body {
-    overflow-x: hidden;
-  }
-  
-  #root {
-    overflow-x: hidden;
-  }
-  
-  .section-padding {
-    overflow-x: hidden;
-  }
-  
-  /* Prevenir overflow en contenedores principales solo en X */
-  .container {
-    overflow-x: hidden;
-  }
-  
-  /* Prevenir overflow en grids solo en X */
-  .grid {
-    overflow-x: hidden;
-  }
-  
-  /* Prevenir overflow en cualquier elemento */
-  * {
-    box-sizing: border-box;
-  }
-
-  /* Prevenir que el hover se corte en About */
+  /* Configuraciones específicas para About - permitir hover effects */
   #about .grid {
     overflow: visible !important;
   }
@@ -314,23 +222,12 @@
     overflow: visible !important;
   }
 
-  /* Agregar padding extra para el hover effect */
   #about .grid.grid-cols-2 {
     padding: 8px;
     gap: 1.5rem;
   }
 
-  /* Prevenir scroll interno en Projects solamente */
-  #projects .grid {
-    overflow: hidden !important;
-  }
-
-  /* Asegurar que el hover en Projects no cause scroll interno */
-  #projects .group:hover {
-    overflow: hidden;
-  }
-
-  /* Efecto más leve y agrandamiento menor para iconos en Skills (Frontend, Backend, Herramientas, Diseño & UX) */
+  /* Efecto más leve y agrandamiento menor para iconos en Skills */
   #skills .group\/item:hover img {
     transform: scale(1.06);
     filter: drop-shadow(0 0 1.5px #38bdf8) drop-shadow(0 0 0.2px #38bdf8);
@@ -343,18 +240,14 @@
     transition: box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
   }
 
-  /* Permitir que el efecto de hover de iconos en Skills nunca se corte (incluso en el borde inferior) */
+  /* Permitir que el efecto de hover de iconos en Skills nunca se corte */
   #skills .grid {
     overflow: visible !important;
+    padding-bottom: 24px;
   }
 
   #skills .group {
     overflow: visible !important;
-  }
-
-  /* Asegurar que el padding-bottom del grid de Skills permita que el hover de los iconos de la última fila no se corte */
-  #skills .grid {
-    padding-bottom: 24px;
   }
 }
 
@@ -394,8 +287,6 @@
 
   .container {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
-    box-sizing: border-box;
-    overflow-x: hidden;
   }
 }
 

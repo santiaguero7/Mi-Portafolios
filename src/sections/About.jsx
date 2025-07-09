@@ -82,8 +82,7 @@ const About = () => {
 
                 </div>
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary/20 rounded-full blur-sm"></div>
+              {/* Decorative elements eliminados */}
             </div>
           </div>
         </div>

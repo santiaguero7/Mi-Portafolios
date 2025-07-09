@@ -16,7 +16,7 @@ const Hero = () => {
     const interval = setInterval(() => {
       setIsShining(true);
       timeoutId = setTimeout(() => setIsShining(false), 1000);
-    }, 7000); 
+    }, 5000); 
 
     return () => {
       clearInterval(interval);
@@ -75,10 +75,11 @@ const Hero = () => {
 
           <div className="flex justify-center space-x-7 sm:space-x-10 mb-8 sm:mb-16 px-4">
             <a
-              href="https://github.com"
+              href="https://github.com/santiaguero7"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-primary transition-all duration-300 transform hover:scale-110"
+              title="GitHub"
             >
               <Github size={34} className="sm:w-10 sm:h-10" />
             </a>
@@ -87,20 +88,24 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-primary transition-all duration-300 transform hover:scale-110"
+              title="LinkedIn"
             >
               <Linkedin size={34} className="sm:w-10 sm:h-10" />
             </a>
             <a
-              href="mailto:santiago.aguero@email.com"
+              href="mailto:aguero17.2001@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-foreground/60 hover:text-primary transition-all duration-300 transform hover:scale-110"
+              title="Correo"
             >
               <Mail size={34} className="sm:w-10 sm:h-10" />
             </a>
             <a
-              href="/cv-santiago-aguero.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/CV-Santiago.pdf"
+              download
               className="text-foreground/60 hover:text-primary transition-all duration-300 transform hover:scale-110"
+              title="Descargar CV"
             >
               <FileText size={34} className="sm:w-10 sm:h-10" />
             </a>
