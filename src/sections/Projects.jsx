@@ -1,6 +1,5 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 
 const Projects = () => {
   const projects = [
@@ -24,7 +23,6 @@ const Projects = () => {
       liveUrl: "https://demo.com",
       featured: true
     },
-    // Otros proyectos pequeños
     {
       id: 3,
       title: "Weather Dashboard",
@@ -210,7 +208,7 @@ const Projects = () => {
             variant="outline"
             size="lg"
             className="border-primary/30 hover:bg-primary/10"
-            onClick={() => window.open('https://github.com', '_blank')}
+            onClick={() => window.open('https://github.com/santiaguero7', '_blank')}
           >
             <Github size={20} className="mr-2" />
             Ver todos en GitHub

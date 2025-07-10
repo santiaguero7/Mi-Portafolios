@@ -71,12 +71,17 @@ const About = () => {
           {/* Image/Visual Content */}
           <div data-aos="fade-left" data-aos-delay="300" className="relative order-first lg:order-last flex items-center justify-center min-h-full">
             <div className="relative glass rounded-2xl p-6 sm:p-8 lg:p-12 flex flex-col items-center justify-center w-full max-w-xl mx-auto">
-              {/* Profile Image Placeholder */}
-              <div className="w-full aspect-square max-w-[280px] sm:max-w-[320px] mx-auto bg-gradient-to-br from-primary/20 via-accent/20 to-purple-400/20 rounded-2xl flex items-center justify-center mb-6">
-                <User size={160} className="text-foreground/30 sm:w-[180px] sm:h-[180px]" />
+              {/* Profile Image */}
+              <div className="w-full aspect-square max-w-[280px] sm:max-w-[320px] mx-auto bg-gradient-to-br from-primary/20 via-accent/20 to-purple-400/20 rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
+                <img 
+                  src="/yo.png" 
+                  alt="Foto de Santiago Aguero" 
+                  className="object-cover w-full h-full rounded-2xl shadow-lg" 
+                  loading="lazy"
+                />
               </div>
               <div className="text-center">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">Santiago Aguero</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">Santiago Agüero</h3>
                 <p className="text-foreground/70 mb-4">Full Stack Developer</p>
                 <div className="flex items-center justify-center text-foreground/60 text-sm">
 
