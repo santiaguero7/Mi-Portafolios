@@ -132,13 +132,13 @@ const Projects = () => {
         {/* Other Projects */}
         {otherProjects.length > 0 && (
         <div>
-          <h3 data-aos="fade-up" data-aos-delay="500" className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-center">Otros Proyectos</h3>
+          <h3 data-aos="fade-up" data-aos-delay="300" className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-center">Otros Proyectos</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 overflow-hidden" style={{ overflow: 'hidden' }}>
             {otherProjects.map((project, index) => (
               <div 
                 key={project.id}
                 data-aos="zoom-in"
-                data-aos-delay={600 + (index * 100)}
+                data-aos-delay={300 + (index * 100)}
                 className="group bg-slate-800/20 backdrop-blur rounded-xl border border-slate-700/30 overflow-hidden hover:border-blue-500/40 transition-all duration-300 hover:scale-102"
               >
                 {/* Project Image */}
