@@ -15,20 +15,20 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Plataforma de E-commerce",
-      description: "Plataforma de comercio de perfumes completa con carrito de compras, gestión de inventario y procesamiento de pagos.",
-      technologies: ["React", "Node.js", "MySql", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
+      title: "OpenClima",
+      description: "Aplicación web del clima, que consume la API de OpenWeatherMap para mostrar información meteorológica en tiempo real de cualquier ciudad del mundo.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "OpenWeatherMap API", "Geolocation API"],
+      image: "/clima.png",
+      githubUrl: "https://github.com/santiaguero7/OpenClima.git",
+      liveUrl: "https://climaopen.netlify.app/",
       featured: true
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "Dashboard meteorológico interactivo con pronósticos detallados y visualización de datos.",
-      technologies: ["React", "Python", "FastAPI"],
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Plataforma de E-commerce",
+      description: "Plataforma de comercio de perfumes completa con carrito de compras, gestión de inventario y procesamiento de pagos.",
+      technologies: ["React", "Node.js", "MySql", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
       featured: false
@@ -75,7 +75,10 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ${
+                      project.id === 2 ? 'object-center' : ''
+                    }`}
+                    style={project.id === 2 ? { objectPosition: 'center 30%' } : {}}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
                 </div>
@@ -146,31 +149,36 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className={`w-full h-full group-hover:scale-105 transition-transform duration-300 ${
+                      project.id === 2 ? 'object-cover object-center' : 'object-cover'
+                    }`}
+                    style={project.id === 2 ? { objectPosition: 'center 20%' } : {}}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent"></div>
                 </div>
                 <div className="p-4">
                   <div className="flex justify-between items-start mb-2">
                     <h4 className="text-base sm:text-lg font-bold text-white">{project.title}</h4>
-                    <div className="flex space-x-2">
+                    <div className="flex space-x-3">
                       <a 
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-foreground/60 hover:text-primary transition-colors"
+                        className="flex items-center px-2 py-1 bg-blue-600/20 hover:bg-blue-600/40 text-blue-300 hover:text-white rounded-md transition-all duration-300 text-xs"
                         aria-label="Ver proyecto live"
                       >
-                        <ExternalLink size={16} />
+                        <ExternalLink size={14} className="mr-1" />
+                        Demo
                       </a>
                       <a 
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-foreground/60 hover:text-primary transition-colors"
+                        className="flex items-center px-2 py-1 bg-slate-700/50 hover:bg-slate-600/50 text-gray-300 hover:text-white rounded-md transition-all duration-300 text-xs"
                         aria-label="Ver código en GitHub"
                       >
-                        <Github size={16} />
+                        <Github size={14} className="mr-1" />
+                        Código
                       </a>
                     </div>
                   </div>
@@ -178,7 +186,7 @@ const Projects = () => {
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-2">
-                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                    {project.technologies.slice(0, 5).map((tech, techIndex) => (
                       <span
                         key={techIndex}
                         className="px-2 py-0.5 bg-blue-600/10 text-blue-300 text-xs rounded-full border border-blue-500/20"
@@ -186,9 +194,9 @@ const Projects = () => {
                         {tech}
                       </span>
                     ))}
-                    {project.technologies.length > 3 && (
+                    {project.technologies.length > 5 && (
                       <span className="px-2 py-0.5 bg-blue-600/10 text-blue-300 text-xs rounded-full border border-blue-500/20">
-                        +{project.technologies.length - 3}
+                        +{project.technologies.length - 5}
                       </span>
                     )}
                   </div>
