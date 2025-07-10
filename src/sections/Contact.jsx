@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Send, Github, Linkedin, MapPin } from 'lucide-react';
 
 const Contact = () => {
@@ -27,6 +27,8 @@ const Contact = () => {
       color: "hover:text-blue-400"
     }
   ];
+
+  const [sent, setSent] = useState(false);
 
   return (
     <section id="contact" className="py-20 relative bg-muted/10">
@@ -84,13 +86,7 @@ const Contact = () => {
               <h3 className="text-xl font-bold text-white mb-6">Envíame un mensaje</h3>
               
               {/* Netlify form integration */}
-              <form name="contact" method="POST" data-netlify="true" className="space-y-6" onSubmit={(e) => {
-                if (typeof window !== 'undefined') {
-                  setTimeout(() => {
-                    alert('¡Mensaje enviado! Gracias por contactarme.');
-                  }, 100);
-                }
-              }}>
+              <form name="contact" method="POST" data-netlify="true" className="space-y-6" onSubmit={() => setSent(true)}>
                 <input type="hidden" name="form-name" value="contact" />
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -136,11 +132,14 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="group w-full flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
+                  className="group w-full flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-blue-500/25"
                 >
                   <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
                   Enviar Mensaje
                 </button>
+                {sent && (
+                  <div className="text-green-400 text-center font-semibold mt-2">¡Mensaje enviado! Gracias por contactarme.</div>
+                )}
               </form>
             </div>
           </div>
