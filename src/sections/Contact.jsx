@@ -1,25 +1,8 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Mail, Send, Github, Linkedin, MapPin } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
 
   const contactInfo = [
     {
@@ -100,7 +83,15 @@ const Contact = () => {
             <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-8">
               <h3 className="text-xl font-bold text-white mb-6">Envíame un mensaje</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Netlify form integration */}
+              <form name="contact" method="POST" data-netlify="true" className="space-y-6" onSubmit={(e) => {
+                if (typeof window !== 'undefined') {
+                  setTimeout(() => {
+                    alert('¡Mensaje enviado! Gracias por contactarme.');
+                  }, 100);
+                }
+              }}>
+                <input type="hidden" name="form-name" value="contact" />
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Nombre
@@ -109,8 +100,7 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                     placeholder="Tu nombre"
                   />
@@ -124,8 +114,7 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                     placeholder="tu@email.com"
                   />
@@ -138,8 +127,7 @@ const Contact = () => {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
+                    required
                     rows={4}
                     className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
                     placeholder="Cuéntame sobre tu proyecto..."
