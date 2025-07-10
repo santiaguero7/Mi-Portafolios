@@ -17,7 +17,7 @@ const Projects = () => {
       id: 2,
       title: "OpenClima",
       description: "Aplicación web del clima, que consume la API de OpenWeatherMap para mostrar información meteorológica en tiempo real de cualquier ciudad del mundo.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "OpenWeatherMap API", "Geolocation API"],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "OpenWeatherMap API"],
       image: "/clima.png",
       githubUrl: "https://github.com/santiaguero7/OpenClima.git",
       liveUrl: "https://climaopen.netlify.app/",
