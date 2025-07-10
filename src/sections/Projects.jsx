@@ -17,7 +17,7 @@ const Projects = () => {
       id: 2,
       title: "OpenClima",
       description: "Aplicación web del clima, que consume la API de OpenWeatherMap para mostrar información meteorológica en tiempo real de cualquier ciudad del mundo.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "OpenWeatherMap API"],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "OpenWeatherMap API", "Geolocation API"],
       image: "/clima.png",
       githubUrl: "https://github.com/santiaguero7/OpenClima.git",
       liveUrl: "https://climaopen.netlify.app/",
@@ -68,7 +68,7 @@ const Projects = () => {
                 key={project.id}
                 data-aos="fade-up"
                 data-aos-delay={300 + (index * 100)}
-                className="group bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                className="group bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 flex flex-col h-full"
               >
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -84,7 +84,7 @@ const Projects = () => {
                 </div>
 
                 {/* Project Info */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
@@ -106,7 +106,7 @@ const Projects = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 mt-auto">
                     <a
                       href={project.githubUrl}
                       target="_blank"
