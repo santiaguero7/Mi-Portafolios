@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { Mail, Send, Github, Linkedin, MapPin } from 'lucide-react';
+import { Mail, Send, Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
-
-
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
@@ -34,7 +32,6 @@ const Contact = () => {
     <section id="contact" className="py-20 relative bg-muted/10">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Section Title */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 font-noto text-blue-600">
               Conectemos
@@ -45,7 +42,6 @@ const Contact = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Info */}
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-6">¡Hablemos!</h3>
@@ -81,10 +77,9 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-8">
               <h3 className="text-xl font-bold text-white mb-6">Envíame un mensaje</h3>
-              
+
               {sent ? (
                 <div className="text-blue-400 text-center text-lg font-semibold py-8">
                   ¡Mensaje enviado correctamente! Gracias por contactarme.
@@ -94,6 +89,8 @@ const Contact = () => {
                   name="contact"
                   method="POST"
                   data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  action="/"
                   className="space-y-6"
                   onSubmit={async (e) => {
                     e.preventDefault();
@@ -112,8 +109,11 @@ const Contact = () => {
                     }
                   }}
                 >
+                  {/* Hidden input for Netlify */}
                   <input type="hidden" name="form-name" value="contact" />
-                  
+                  {/* Honeypot anti-bot */}
+                  <input type="hidden" name="bot-field" />
+
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                       Nombre
