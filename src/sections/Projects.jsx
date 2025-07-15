@@ -35,9 +35,9 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Social Media Analytics",
-      description: "Herramienta de análisis de redes sociales con métricas avanzadas y visualización de datos.",
-      technologies: ["Vue.js", "Django", "D3.js"],
+      title: "Proyecto a cargar...",
+      description: "En proceso...",
+      technologies: [],
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",

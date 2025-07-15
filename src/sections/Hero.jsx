@@ -105,7 +105,9 @@ const Hero = () => {
             </div>
             <a
               href="/CV-Santiago.pdf"
-              download
+              download="CV-Santiago.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 text-foreground/60 hover:text-primary transition-all duration-300 text-lg font-semibold rounded-lg px-4 py-2 mt-2 border border-transparent hover:border-primary bg-transparent"
               title="Descargar CV"
             >

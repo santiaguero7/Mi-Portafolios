@@ -22,7 +22,8 @@ const Footer = () => {
     {
       name: 'CV',
       icon: <FileText size={20} />,
-      url: '/CV-Santiago.pdf'
+      url: '/CV-Santiago.pdf',
+      download: 'CV-Santiago.pdf'
     }
   ];
 
@@ -55,6 +56,7 @@ const Footer = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                download={link.download}
                 className="text-foreground/60 hover:text-primary transition-colors duration-200 p-2 glass rounded-lg hover:bg-white/10"
                 aria-label={link.name}
               >
